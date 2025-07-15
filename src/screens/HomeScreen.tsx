@@ -11,7 +11,6 @@ import {
   Image,
   Dimensions
 } from 'react-native';
-// Remove direct imports for PNGs, use require inline instead
 
 const { width } = Dimensions.get('window');
 
@@ -60,7 +59,6 @@ const HomeScreen = () => {
     setLoading(true);
     setAudioAvailable(false);
     
-    // Simulate conversion process
     setTimeout(() => {
       setLoading(false);
       setAudioAvailable(true);
@@ -72,11 +70,9 @@ const HomeScreen = () => {
   };
 
   const renderWaveform = () => {
-    // Fill area, animate progress
     const barCount = 48;
     const bars = [];
     for (let i = 0; i < barCount; i++) {
-      // Animate color if within progress
       const isActive = progress > i / barCount;
       bars.push(
         <View
@@ -88,7 +84,6 @@ const HomeScreen = () => {
             borderRadius: 1,
             marginHorizontal: 1,
             opacity: isActive ? 1 : 0.5,
-            // Removed transitionProperty and transitionDuration (not supported in RN)
           }}
         />
       );
@@ -152,7 +147,6 @@ const HomeScreen = () => {
           </View>
         </View>
 
-        {/* Convert Button */}
         <TouchableOpacity
           style={[
             styles.convertButton,
@@ -167,14 +161,12 @@ const HomeScreen = () => {
           </Text>
         </TouchableOpacity>
 
-        {/* Loading Indicator */}
         {loading && (
           <View style={styles.loadingContainer}>
             <ActivityIndicator size="small" color="#0900C3" style={{ marginBottom: 4 }} />
           </View>
         )}
 
-        {/* Audio Player */}
         {audioAvailable && !loading && (
           <View style={styles.audioBox}>
             <TouchableOpacity style={styles.playButton} onPress={handlePlay} disabled={isPlaying}>
@@ -187,7 +179,6 @@ const HomeScreen = () => {
           </View>
         )}
 
-        {/* Download Button */}
         {audioAvailable && !loading && (
           <TouchableOpacity style={styles.downloadButton} onPress={handleDownload}>
             <Image source={require('../img/download.png')} style={styles.buttonIcon} resizeMode="contain" />
@@ -195,7 +186,7 @@ const HomeScreen = () => {
           </TouchableOpacity>
         )}
 
-        {/* Empty State */}
+        
         {!audioAvailable && !loading && textInput.trim() && (
           <View style={styles.emptyState}>
             <View style={styles.emptyStateIcon}>

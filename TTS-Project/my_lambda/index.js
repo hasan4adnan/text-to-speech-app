@@ -7,7 +7,7 @@ exports.handler = async (event) => {
   try {
     console.log('Event:', JSON.stringify(event));
 
-    // Mobil veya API Gateway'den gelen body'yi parse et
+    
     const { text, languageCode, voiceId } = JSON.parse(event.body);
 
     const params = {
@@ -17,13 +17,13 @@ exports.handler = async (event) => {
       LanguageCode: languageCode || 'en-US'
     };
 
-    // Polly çağrısı
+    
     const pollyResult = await polly.synthesizeSpeech(params).promise();
 
     const bucketName = process.env.BUCKET_NAME;
     const objectKey = `tts-output-${Date.now()}.mp3`;
 
-    // S3'e yükle (ACL yok!)
+    
     await s3.putObject({
       Bucket: bucketName,
       Key: objectKey,
@@ -33,7 +33,6 @@ exports.handler = async (event) => {
 
     const audioUrl = `https://${bucketName}.s3.amazonaws.com/${objectKey}`;
 
-    // ✅ API Gateway CORS header ekliyor
     return {
       statusCode: 200,
       headers: {
