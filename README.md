@@ -1,5 +1,6 @@
 # 🎙️ Serverless Multi-Language Text-to-Speech App
 
+<img width="1242" height="622" alt="Ekran Resmi 2025-07-15 23 21 13" src="https://github.com/user-attachments/assets/eb047f76-b6ea-4786-a730-b7f320dd1c79" />
 
 https://github.com/user-attachments/assets/f6c2a4f2-35eb-4d60-9001-87ff903954b0
 
