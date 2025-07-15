@@ -11,18 +11,18 @@ const OnboardingScreen = () => {
 
   const slides = [
     {
-      title: "Find Your Study Match",
-      subtitle: "Easily connect with students taking the same courses as you.",
+      title: "Convert Text to Speech",
+      subtitle: "Type any text and turn it into audio using Amazon Polly.",
       characterImage: require('../img/bau5.png'),
     },
     {
-      title: "Share Notes & Knowledge",
-      subtitle: "Upload, view and exchange course materials with your matches.",
+      title: "Multi-Language & Voices",
+      subtitle: "Select your preferred language, voice, and accent easily.",
       characterImage: require('../img/bau6.png'),
     },
     {
-      title: "Start Studying Smarter",
-      subtitle: "Collaborate with peers and boost your academic performance.",
+      title: "Listen & Download Audio",
+      subtitle: "Play the generated speech and download it to your device.",
       characterImage: require('../img/bau7.png'),
     },
   ];
@@ -71,12 +71,11 @@ const OnboardingScreen = () => {
             <View style={styles.dotsContainer}>{renderDots()}</View>
             {currentSlide === slides.length - 1 ? (
               <View style={styles.buttonRow}>
-                
                 <TouchableOpacity
                   style={styles.splitButtonRight}
                   onPress={() => navigation.navigate('HomeScreen')}
                 >
-                  <Text style={styles.buttonText}>Sign In</Text>
+                  <Text style={styles.buttonText}>Get Started</Text>
                 </TouchableOpacity>
               </View>
             ) : (
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#0A1931',
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 16,
     textAlign: 'left',
@@ -175,39 +174,24 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 24,
   },
-  splitButtonLeft: {
-  flex: 1,
-  backgroundColor: '#0900C3',
-  paddingVertical: 16,
-  borderRadius: 18, // buraya dikkat!
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginRight: 6,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.2,
-  shadowRadius: 4,
-  elevation: 3,
-},
-
   splitButtonRight: {
-  flex: 1,
-  backgroundColor: '#0900C3',
-  paddingVertical: 16,
-  borderRadius: 18, // burası da aynı!
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginLeft: 6,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 2 },
-  shadowOpacity: 0.2,
-  shadowRadius: 4,
-  elevation: 3,
-},
+    flex: 1,
+    backgroundColor: '#0900C3',
+    paddingVertical: 16,
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
 });
 
 export default OnboardingScreen;

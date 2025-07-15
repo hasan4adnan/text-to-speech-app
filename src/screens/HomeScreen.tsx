@@ -183,7 +183,7 @@ const HomeScreen = () => {
             <View style={styles.waveformContainer}>
               <View style={styles.waveform}>{renderWaveform()}</View>
             </View>
-            <Text style={styles.duration}>01:10</Text>
+            <Text style={styles.duration}>0:02</Text>
           </View>
         )}
 
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
   flagEmoji: {
     fontSize: 16,
     marginRight: 6,
-    color: '#FAF1E6',
+    
   },
   pickerText: {
     color: '#FAF1E6',
@@ -469,7 +469,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     marginRight: 8,
-    tintColor: '#FAF1E6',
+    
   },
   buttonIcon: {
     width: 20,
