@@ -188,8 +188,8 @@ Here’s how your mobile application will interact with the API Gateway endpoint
     }
   ]
 }
-
-🤝 Contributions
+```
+### 🤝 Contributions
 We welcome contributions to make this project even better! Feel free to:
 
 Open an issue to report bugs or suggest new features.
@@ -204,5 +204,5 @@ Adding CloudFront for faster global audio streaming.
 
 Implementing more robust error handling.
 
-📜 License
+### 📜 License
 This project is intended for learning and portfolio use. You are free to adapt, extend, and use it in your own projects.
